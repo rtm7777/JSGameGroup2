@@ -1,11 +1,53 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<title>Game</title>
 	<link rel="shortcut icon" type="image/png" href="img/icon.png">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+	<div class="navbar navbar-inverse">
+		<div class="container">
+			<a href="/" class="navbar-brand">JSGame</a>
+			<ul class="nav navbar-nav">
+				<li><a href="#">New game</a></li>
+				<li><a href="#">Help</a></li>
+			</ul>
+			<ul class="nav navbar-nav pull-right">
+				<p class="navbar-text">Signed in as <a href="#" class="navbar-link">Player1</a></p>
+				<li><a href="#">Log out</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3">
+				<div class="panel panel-default">
+					<div class="panel-heading">Player Items</div>
+					<div class="list-group">
+						<div class="list-group-item">
+							<p>Player level - 1</p>
+							<div class="progress progress-striped">
+								<div class="progress-bar progress-bar-info" role="progressbar" style="width: 40%">
+									<span class="sr-only">40% Complete (success)</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-9">
+				<canvas id="game_canvas" width="700" height="500"></canvas>
+			</div>
+		</div>
+	</div>
+	<div>
+		<p class="text-center text-muted"><a href="#">GeekHub</a> &copy; 2013</p>
+	</div>
 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

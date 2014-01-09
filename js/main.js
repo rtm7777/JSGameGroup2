@@ -31,7 +31,9 @@ $(function() {
 					[2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 					[2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0]];
 
-	var step = 10;
+	var players = {};
+
+	var step = 20;
 
 	var stage = new Kinetic.Stage({
 		container: 'game',
@@ -48,7 +50,7 @@ $(function() {
 		0: 'img/grass.png',
 		1: 'img/pebble.png',
 		2: 'img/water.png',
-		3: 'img/lava.png'
+		3: 'img/lava.png',
 	};
 
 	function loadImages(sources, callback) {
@@ -71,16 +73,29 @@ $(function() {
 		}
 	};
 
-	var player1 = new Kinetic.Rect({
-		x: 40,
-		y: 40,
-		width: 20,
-		height: 20,
-		fill: 'green',
-		level: 40,
-	});
-	layer.add(player1);
-	layer.draw();
+	spirtesImage = new Image();
+	spirtesImage.onload = setImage();
+	spirtesImage.src = "img/Sprites.png";
+
+
+	var currentPlayer = new Kinetic.Rect({
+			x: 34,
+			y: 43,
+			width: 32,
+			height: 32,
+			fillPatternImage: spirtesImage,
+			fillPatternX: -96,
+			fillPatternY: -32
+		});
+		layer.add(currentPlayer);
+		layer.draw();
+
+
+		
+
+	function setImage() {
+
+		}
 
 	function drawMap(mapArray, images) {
 		for (col in mapArray) {
@@ -100,26 +115,34 @@ $(function() {
 
 	$(document).keydown(function(event) {
 		if (event.keyCode == 37) {
-			if (player1.getX() > 0) {
-				movePlayer(player1, "left");
+			if (currentPlayer.getX() > 0) {
+				movePlayer(currentPlayer, "left");
+				currentPlayer.setFillPatternX(-96);
+				currentPlayer.setFillPatternY(-32);
 			};
 
 		} else if (event.keyCode == 38) {
 
-			if (player1.getY() > 0) {
-				movePlayer(player1, "up");
+			if (currentPlayer.getY() > -12) {
+				movePlayer(currentPlayer, "up");
+				currentPlayer.setFillPatternX(-96);
+				currentPlayer.setFillPatternY(-96);
 			};
 
 		} else if (event.keyCode == 39) {
 
-			if (player1.getX() < stage.getWidth() - 20) {
-				movePlayer(player1, "right");
+			if (currentPlayer.getX() < stage.getWidth() - 37) {
+				movePlayer(currentPlayer, "right");
+				currentPlayer.setFillPatternX(-96);
+				currentPlayer.setFillPatternY(-64);
 			};
 
 		} else if (event.keyCode == 40) {
 
-			if (player1.getY() < stage.getHeight() - 20) {
-				movePlayer(player1, "down");
+			if (currentPlayer.getY() < stage.getHeight() - 47) {
+				movePlayer(currentPlayer, "down");
+				currentPlayer.setFillPatternX(-96);
+				currentPlayer.setFillPatternY(0);
 			};
 
 		};
@@ -145,10 +168,6 @@ $(function() {
 				break;
 		};
 	};
-
-	function addRes(resNum, posX, posY) {
-
-	}
 
 	loadImages(sources, function(images) {
 		drawMap(mapArray, images);

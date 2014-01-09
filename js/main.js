@@ -74,28 +74,23 @@ $(function() {
 	};
 
 	spirtesImage = new Image();
-	spirtesImage.onload = setImage();
+	spirtesImage.onload = function() {
+		layer.draw();
+	};
 	spirtesImage.src = "img/Sprites.png";
 
 
 	var currentPlayer = new Kinetic.Rect({
-			x: 34,
-			y: 43,
-			width: 32,
-			height: 32,
-			fillPatternImage: spirtesImage,
-			fillPatternX: -96,
-			fillPatternY: -32
-		});
-		layer.add(currentPlayer);
-		layer.draw();
+		x: 34,
+		y: 43,
+		width: 32,
+		height: 32,
+		fillPatternImage: spirtesImage,
+		fillPatternX: -96,
+		fillPatternY: 0
+	});
+	layer.add(currentPlayer);
 
-
-		
-
-	function setImage() {
-
-		}
 
 	function drawMap(mapArray, images) {
 		for (col in mapArray) {

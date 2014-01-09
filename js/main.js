@@ -77,7 +77,7 @@ $(function() {
 	spirtesImage.onload = function() {
 		layer.draw();
 	};
-	spirtesImage.src = "img/Sprites.png";
+	spirtesImage.src = "img/sprites.png";
 
 
 	var currentPlayer = new Kinetic.Rect({
@@ -86,7 +86,7 @@ $(function() {
 		width: 32,
 		height: 32,
 		fillPatternImage: spirtesImage,
-		fillPatternX: -96,
+		fillPatternX: -96*5,
 		fillPatternY: 0
 	});
 	layer.add(currentPlayer);
@@ -112,15 +112,15 @@ $(function() {
 		if (event.keyCode == 37) {
 			if (currentPlayer.getX() > 0) {
 				movePlayer(currentPlayer, "left");
-				currentPlayer.setFillPatternX(-96);
+				currentPlayer.setFillPatternX(-96*5);
 				currentPlayer.setFillPatternY(-32);
 			};
 
 		} else if (event.keyCode == 38) {
 
-			if (currentPlayer.getY() > -12) {
+			if (currentPlayer.getY() > 0) {
 				movePlayer(currentPlayer, "up");
-				currentPlayer.setFillPatternX(-96);
+				currentPlayer.setFillPatternX(-96*5);
 				currentPlayer.setFillPatternY(-96);
 			};
 
@@ -128,15 +128,15 @@ $(function() {
 
 			if (currentPlayer.getX() < stage.getWidth() - 37) {
 				movePlayer(currentPlayer, "right");
-				currentPlayer.setFillPatternX(-96);
+				currentPlayer.setFillPatternX(-96*5);
 				currentPlayer.setFillPatternY(-64);
 			};
 
 		} else if (event.keyCode == 40) {
 
-			if (currentPlayer.getY() < stage.getHeight() - 47) {
+			if (currentPlayer.getY() < stage.getHeight() - 37) {
 				movePlayer(currentPlayer, "down");
-				currentPlayer.setFillPatternX(-96);
+				currentPlayer.setFillPatternX(-96*5);
 				currentPlayer.setFillPatternY(0);
 			};
 

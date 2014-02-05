@@ -1,8 +1,11 @@
 define(['kinetic'], function(Kinetic) {
+
+	var mapLayer = new Kinetic.Layer();
+	
 	function render(parametrs) {
 		var mapArray = parametrs.mapArray;
 		var sources = parametrs.sources;
-		var mapLayer = new Kinetic.Layer();
+		
 		parametrs.stage.add(mapLayer);
 
 		function loadImages(sources, callback) {

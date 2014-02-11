@@ -1,12 +1,14 @@
-define(['kinetic'], function(Kinetic) {
+define([
+	'kinetic',
+	'models/MapModel',
+	'views/Stage'
+], function(Kinetic, mapModel, stage) {
 
 	var mapLayer = new Kinetic.Layer();
 	
-	function render(parametrs) {
-		var mapArray = parametrs.mapArray;
-		var sources = parametrs.sources;
-		
-		parametrs.stage.add(mapLayer);
+	function render() {
+		var mapArray = mapModel.mapArray;
+		var sources = mapModel.sources;
 
 		function loadImages(sources, callback) {
 			var images = {};
@@ -47,6 +49,8 @@ define(['kinetic'], function(Kinetic) {
 			drawMap(mapArray, images);
 		});
 	}
+
+	stage.add(mapLayer);
 
 	return {
 		render: render

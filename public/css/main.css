@@ -4,3 +4,8 @@
 	border: 1px solid #ccc;
 	overflow: hidden;
 }
+
+.white {
+	color: #f9f9f9;
+	background-color: #fff;
+}

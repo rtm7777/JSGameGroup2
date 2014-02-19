@@ -23,6 +23,7 @@ define(['kinetic',
 
 		spirtesImage = new Image();
 		spirtesImage.onload = function() {
+			mainPlayerLayer.moveToTop();
 			mainPlayerLayer.draw();
 		};
 

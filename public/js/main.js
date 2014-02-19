@@ -10,6 +10,8 @@ require.config({
 });
 
 require([
+	'bootstrap',
 	'controllers/MainPlayerController',
-	'controllers/MapController'
+	'controllers/MapController',
+	'controllers/ItemsController'
 ]);

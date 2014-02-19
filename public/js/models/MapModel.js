@@ -1,5 +1,5 @@
 define([], function() {
-	var map = {
+	var model = {
 		height: 500,
 		width: 700,
 		container: 'game',
@@ -37,6 +37,6 @@ define([], function() {
 					[2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
 	};
 
-	return map;
+	return model;
 
 });

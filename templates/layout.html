@@ -4,7 +4,7 @@
 	<title>{% block title%}{% endblock %}</title>
 	<link rel="shortcut icon" type="image/png" href="img/icon.png">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="js/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
 </head>
 <body>
 	<div class="navbar navbar-inverse">
@@ -13,10 +13,11 @@
 			<ul class="nav navbar-nav">
 				<li><a href="#">New game</a></li>
 				<li><a href="#">Help</a></li>
+				<li><a href="#"><span class="glyphicon glyphicon-comment"></span> Chat</a></li>
 			</ul>
 			<ul class="nav navbar-nav pull-right">
 				<p class="navbar-text">Signed in as <a href="#" class="navbar-link">{{ nickname }}</a></p>
-				<li><a href="#">Log out</a></li>
+				<li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
 			</ul>
 		</div>
 	</div>

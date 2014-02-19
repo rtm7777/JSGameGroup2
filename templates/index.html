@@ -1,0 +1,28 @@
+﻿{% extends 'layout.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% set nickname = player %}
+	
+	{% block content %}
+		<div class="row">
+			<div class="col-lg-3">
+				<div class="panel panel-default">
+					<div class="panel-heading">Player Items</div>
+					<div class="list-group">
+						<div class="list-group-item">
+							<p>Player level - 1</p>
+							<div class="progress progress-striped">
+								<div class="progress-bar progress-bar-info" role="progressbar" style="width: 40%">
+									<span class="sr-only">40% Complete (success)</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-9">
+				<div id="game"></div>
+			</div>
+		</div>
+	{% endblock %}

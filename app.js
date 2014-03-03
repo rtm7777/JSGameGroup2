@@ -14,6 +14,12 @@ app.set('view engine', 'html');
 app.set('views', __dirname + '/templates');
 
 
+app.use(function(req, res, next) {  // disable cache html
+	req.headers['if-none-match'] = 'no-match-for-this';
+	next();    
+});
+
+
 app.use(express.favicon());
 
 if (app.get('env') == 'development') {

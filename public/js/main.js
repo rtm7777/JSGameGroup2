@@ -13,5 +13,6 @@ require([
 	'bootstrap',
 	'controllers/MainPlayerController',
 	'controllers/MapController',
-	'controllers/ItemsController'
+	'controllers/ItemsController',
+	'controllers/ChatController'
 ]);

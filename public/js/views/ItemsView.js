@@ -44,7 +44,7 @@ define(['kinetic',
 
 	return {
 		render: render,
-		drawItems :drawItems
+		drawItems: drawItems
 	};
 
 });

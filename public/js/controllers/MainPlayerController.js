@@ -15,27 +15,28 @@ define(['jquery',
 		if (event.keyCode == 37) {
 			
 			moveMainPlayer("left");
+			event.preventDefault();
 
 		} else if (event.keyCode == 38) {
 			
 			moveMainPlayer("up");
+			event.preventDefault();
 
 		} else if (event.keyCode == 39) {
 
 			moveMainPlayer("right");
+			event.preventDefault();
 
 		} else if (event.keyCode == 40) {
 
-			moveMainPlayer("down");	
+			moveMainPlayer("down");
+			event.preventDefault();	
 
 		};
 
 		function moveMainPlayer(direction) {
 			MPView.moveTo(direction, playerType);
 		};
-
-		event.preventDefault();
-
 	});
 
 });

@@ -1,10 +1,10 @@
-﻿{%extends 'layout.html'%}
+﻿{% extends 'layout.html' %}
 
-{%block title%}{{ title }}{%endblock%}
+{% block title %}{{ title }}{% endblock %}
 
-{%set nickname = player%}
+{% set nickname = player %}
 	
-	{%block content%}
+	{% block content %}
 		<div class="row">
 			<div class="col-lg-3">
 				<div class="panel panel-default">
@@ -25,8 +25,13 @@
 				<div id="game"></div>
 			</div>
 		</div>
-	{%endblock%}
+	{% endblock %}
 
-{%block resources%}
+	{% block chat%}
+		{% include "chat.html" %}
+	{% endblock %}
+
+
+{% block resources %}
 <script data-main="js/main" src="js/require.js"></script>
-{%endblock%}
+{% endblock %}

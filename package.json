@@ -22,5 +22,8 @@
     "game"
   ],
   "author": "rtm7777",
-  "license": "GPLv3"
+  "license": "GPLv3",
+  "engines": {
+    "node": "0.10.x"
+  }
 }

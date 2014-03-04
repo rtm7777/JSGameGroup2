@@ -7,5 +7,20 @@
   },
   "dependencies": {
     "express": "3.4.8"
-  }
+  },
+  "readmeFilename": "README.md",
+  "gitHead": "cc47e0b0b3a25d0b46f9a094f8f1261656d8a5a1",
+  "description": "JSGameGroup2 ============",
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rtm7777/JSGameGroup2.git"
+  },
+  "keywords": [
+    "websocket",
+    "game"
+  ],
+  "author": "rtm7777",
+  "license": "GPLv3"
 }

@@ -20,8 +20,10 @@ module.exports = function(app, passport) {
 		failureFlash: true
 	}));
 
-	app.get('/signup', function(req, res) {
-		res.render('signup');
+	app.get('/signup', function(req, res, next) {
+		res.render('signup', {
+			title: 'Sign up'
+		});
 	});
 
 	app.post('/signup', passport.authenticate('local-signup', {

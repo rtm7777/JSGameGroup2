@@ -16,8 +16,8 @@
 				<li><a href="#chat"><span class="glyphicon glyphicon-comment"></span> Chat</a></li>
 			</ul>
 			<ul class="nav navbar-nav pull-right">
-				<p class="navbar-text">Signed in as <a href="#" class="navbar-link">{{ nickname }}</a></p>
-				<li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
+				{% block login %}
+				{% endblock %}
 			</ul>
 		</div>
 	</div>

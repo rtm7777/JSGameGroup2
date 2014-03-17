@@ -2,7 +2,10 @@
 
 {% block title %}{{ title }}{% endblock %}
 
-{% set nickname = player %}
+{% block login %}
+	<p class="navbar-text">Signed in as <a href="/profile" class="navbar-link">{{ player.local.email }}</a></p>
+	<li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Sign out</a></li>
+{% endblock %}
 	
 	{% block content %}
 		<div class="row">

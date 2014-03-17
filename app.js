@@ -1,20 +1,25 @@
-var express = require('express');
-var http = require('http');
-var path = require('path');
-var config = require('./config');
-var log = require('./libs/log')(module);
+var express   = require('express');
+var http      = require('http');
+var path      = require('path');
+var mongoose  = require('./libs/mongoose');
+var passport  = require('passport');
+var flash     = require('connect-flash');
+var config    = require('./config');
+var log       = require('./libs/log')(module);
 var HttpError = require('./error').HttpError;
 
 var app = express();
 
 swig = require('swig');
 
+require('./config/passport')(passport);
+
 app.engine('html', swig.renderFile);
 app.set('view engine', 'html');
 app.set('views', __dirname + '/templates');
 
 
-app.use(function(req, res, next) {  // disable cache html
+app.use(function(req, res, next) {  // disable cache html will be deleted in prod
 	req.headers['if-none-match'] = 'no-match-for-this';
 	next();    
 });
@@ -31,11 +36,18 @@ if (app.get('env') == 'development') {
 app.use(express.bodyParser());
 app.use(express.cookieParser());
 
+app.use(express.session({
+	secret: config.get('session:secret')
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
+
 app.use(require('./middleware/sendHttpError'));
 
 app.use(app.router);
 
-require('./routes')(app);
+require('./routes')(app, passport);
 
 app.use(express.static(path.join(__dirname, 'public')));
 

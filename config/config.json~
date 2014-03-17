@@ -1,0 +1,4 @@
+{
+	"port": process.env.OPENSHIFT_NODEJS_PORT
+
+}

@@ -12,7 +12,9 @@
   "gitHead": "cc47e0b0b3a25d0b46f9a094f8f1261656d8a5a1",
   "description": "JSGameGroup2 ============",
   "main": "app.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.4"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/rtm7777/JSGameGroup2.git"

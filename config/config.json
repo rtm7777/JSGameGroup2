@@ -12,6 +12,11 @@
 	},
 	"session": {
 		"secret": "metallicawiskeyinthejar"
+	},
+	"twitterAuth": {
+		"consumerKey"   : "publicKeyHere",
+		"consumerSecret": "SecretKeyHere",
+		"callbackURL"   : "callbackURL"
 	}
 
 }

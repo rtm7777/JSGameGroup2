@@ -3,7 +3,7 @@
 {% block title %}{{ title }}{% endblock %}
 
 {% block login %}
-	<p class="navbar-text">Signed in as <a href="/profile" class="navbar-link">{{ player.local.email }}</a></p>
+	<p class="navbar-text">Signed in as <a href="/profile" class="navbar-link">{{ player.local.email }}{{player.twitter.username}}</a></p>
 	<li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Sign out</a></li>
 {% endblock %}
 	
